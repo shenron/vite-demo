@@ -4,7 +4,9 @@
   "scripts": {
     "build": "vite build",
     "dev": "vite",
-    "lint:fix": "eslint --ext .jsx,.js,.ts,.tsx src/ --fix"
+    "lint": "npm run lint:tsc && npm run lint:eslint",
+    "lint:tsc": "tsc --project tsconfig.json",
+    "lint:eslint": "eslint --ext .jsx,.js,.ts,.tsx src/ --fix"
   },
   "dependencies": {
     "vue": "^3.0.0-rc.1"
