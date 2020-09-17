@@ -1,4 +1,6 @@
-const path = require('path');
+const path = require('path'); // eslint-disable-line @typescript-eslint/no-var-requires
+
+const extensions = ['.js', '.jsx', '.ts', '.tsx', '.scss', '.css'];
 
 module.exports = {
   root: true,
@@ -7,7 +9,6 @@ module.exports = {
     es2020: true,
   },
   extends: [
-    // 'plugin:vue/essential',
     'airbnb-base',
     'plugin:@typescript-eslint/recommended',
   ],
@@ -18,10 +19,10 @@ module.exports = {
         map: [
           ['/@', path.resolve(__dirname, './src')],
         ],
-        extensions: ['.ts', 'tsx', 'png', '.css', '.scss'],
+        extensions,
       },
       node: {
-        extensions: ['.js', '.jsx', '.ts', '.tsx', '.vue'],
+        extensions,
       },
     },
   },
@@ -50,6 +51,5 @@ module.exports = {
     'no-unused-vars': ['error', { argsIgnorePattern: '^(_|h)' }],
     'import/prefer-default-export': 0,
     'import/no-absolute-path': 0,
-    '@typescript-eslint/no-unsafe-assignment': 0,
   },
 };
