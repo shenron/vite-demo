@@ -1,26 +1,53 @@
+const path = require('path');
+
 module.exports = {
-  parser: 'vue-eslint-parser',
+  root: true,
+  env: {
+    browser: true,
+    es2020: true,
+  },
+  extends: [
+    'plugin:vue/essential',
+    'airbnb-base',
+  ],
+  settings: {
+    'import/resolver': {
+      typescript: {}, // this loads <rootdir>/tsconfig.json to eslint
+      alias: {
+        map: [
+          ['/@', path.resolve(__dirname, './src')],
+        ],
+        extensions: ['.ts', 'tsx', 'png', '.css', '.scss'],
+      },
+      node: {
+        extensions: ['.js', '.jsx', '.ts', '.tsx', '.vue'],
+      },
+    },
+  },
   parserOptions: {
-    parser: '@typescript-eslint/parser', // Specifies the ESLint parser
-    ecmaVersion: 2020, // Allows for the parsing of modern ECMAScript features
-    sourceType: 'module', // Allows for the use of imports
+    parser: '@typescript-eslint/parser',
+    sourceType: 'module',
+    ecmaVersion: 2020,
     ecmaFeatures: {
-      // tsx: true, // Allows for the parsing of JSX
       jsx: true,
     },
   },
-  // settings: {
-  //   tsx: {
-  //     version: "detect" // Tells eslint-plugin-react to automatically detect the version of React to use
-  //   }
-  // },
-  extends: [
-    'plugin:vue/vue3-recommended',
-    'plugin:@typescript-eslint/recommended', // Uses the recommended rules from the @typescript-eslint/eslint-plugin
-    'prettier/@typescript-eslint', // Uses eslint-config-prettier to disable ESLint rules from @typescript-eslint/eslint-plugin that would conflict with prettier
+  plugins: [
+    'vue',
+    '@typescript-eslint',
   ],
   rules: {
-    // Place to specify ESLint rules. Can be used to overwrite rules specified from the extended configs
-    // e.g. "@typescript-eslint/explicit-function-return-type": "off",
+    'import/extensions': ['error', 'ignorePackages', {
+      js: 'never',
+      jsx: 'never',
+      ts: 'never',
+      tsx: 'never',
+      vue: 'never',
+    }],
+    'func-names': 0,
+    '@typescript-eslint/no-unused-vars': ['error', { argsIgnorePattern: '^(_|h)' }],
+    'no-unused-vars': ['error', { argsIgnorePattern: '^(_|h)' }],
+    'import/prefer-default-export': 0,
+    'import/no-absolute-path': 0,
   },
 };

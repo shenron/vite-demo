@@ -6,10 +6,10 @@ export default defineComponent({
   props: {
     msg: String,
   },
-  render (h: any) {
+  render(h: any) {
     return useRender.call(this, h, this);
   },
-  setup () {
+  setup() {
     return {
       count: ref<number>(0),
     };
