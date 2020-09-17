@@ -1,0 +1,16 @@
+{
+  "name": "vuejsglobal",
+  "version": "0.0.0",
+  "scripts": {
+    "build": "vite build",
+    "dev": "vite"
+  },
+  "dependencies": {
+    "vue": "^3.0.0-rc.1"
+  },
+  "devDependencies": {
+    "@vue/compiler-sfc": "^3.0.0-rc.12",
+    "eslint-plugin-vue": "^6.2.2",
+    "vite": "^1.0.0-rc.4"
+  }
+}
