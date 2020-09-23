@@ -1,17 +1,28 @@
-import { defineComponent, ref } from 'vue';
+import {
+  defineComponent,
+} from 'vue';
+import useHelloWorld from './useHelloWorld';
 import useRender from './useRender';
 
+export type Props = {
+  msg: string,
+};
+
+export type HelloWorld = ReturnType<typeof useHelloWorld> & Props;
+
 export default defineComponent({
-  name: 'HelloWorld',
   props: {
-    msg: String,
+    msg: {
+      type: String,
+      required: true,
+    },
   },
   render(h: any) {
-    return useRender.call(this, h, this);
+    return useRender.call(this, h, this as unknown as HelloWorld);
   },
-  setup() {
+  setup(props) {
     return {
-      count: ref<number>(0),
+      ...useHelloWorld(props),
     };
   },
 });

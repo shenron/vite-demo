@@ -5,23 +5,24 @@
     "build": "vite build",
     "dev": "vite",
     "lint": "npm run lint:tsc && npm run lint:eslint",
-    "lint:tsc": "tsc --project tsconfig.json",
-    "lint:eslint": "eslint --ext .jsx,.js,.ts,.tsx src/ --fix"
+    "lint:eslint": "eslint --ext .jsx,.js,.ts,.tsx src/ --fix",
+    "lint:tsc": "tsc --project tsconfig.json"
   },
   "dependencies": {
-    "vue": "^3.0.0-rc.1"
+    "vue": "^3.0.0"
   },
   "devDependencies": {
-    "@typescript-eslint/eslint-plugin": "^4.1.1",
-    "@typescript-eslint/parser": "^4.1.1",
-    "@vue/compiler-sfc": "^3.0.0-rc.12",
+    "@typescript-eslint/eslint-plugin": "^4.2.0",
+    "@typescript-eslint/parser": "^4.2.0",
+    "@vue/compiler-sfc": "^3.0.0",
     "eslint": "^7.9.0",
     "eslint-config-airbnb-base": "^14.2.0",
     "eslint-import-resolver-alias": "^1.1.2",
     "eslint-import-resolver-typescript": "^2.3.0",
     "eslint-plugin-import": "^2.22.0",
     "eslint-plugin-vue": "^6.2.2",
-    "typescript": "^4.0.2",
-    "vite": "^1.0.0-rc.4"
+    "typescript": "^4.0.3",
+    "vite": "^1.0.0-rc.4",
+    "vue-eslint-parser": "^7.1.0"
   }
 }

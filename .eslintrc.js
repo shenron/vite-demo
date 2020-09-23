@@ -26,6 +26,7 @@ module.exports = {
       },
     },
   },
+  parser: 'vue-eslint-parser',
   parserOptions: {
     parser: '@typescript-eslint/parser',
     sourceType: 'module',
@@ -44,7 +45,6 @@ module.exports = {
       jsx: 'never',
       ts: 'never',
       tsx: 'never',
-      vue: 'never',
     }],
     'func-names': 0,
     '@typescript-eslint/no-unused-vars': ['error', { argsIgnorePattern: '^(_|h)' }],

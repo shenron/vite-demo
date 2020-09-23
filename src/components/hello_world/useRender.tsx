@@ -1,5 +1,9 @@
-export default function (h: any, context: any) {
+import type { HelloWorld } from './HelloWorld';
+
+export default function (h: any, props: HelloWorld) {
   return (
-    <div>Oh yeah</div>
+    <div>
+      {props.msg} {props.newMsg}
+    </div>
   );
 }
