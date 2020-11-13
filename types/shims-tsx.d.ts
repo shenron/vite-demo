@@ -1,7 +1,11 @@
-// eslint-disable-next-line max-len
-// eslint-disable-next-line @typescript-eslint/no-namespace,@typescript-eslint/no-unused-vars,no-unused-vars
 declare namespace JSX {
-  interface IntrinsicElements {
-    [elemName: string]: any;
+  interface IntrinsicAttributes {
+    ['v-if']?: unknown
+    ['v-else-if']?: unknown
+    ['v-else']?: unknown
+    ['v-show']?: unknown
+    ['v-html']?: unknown
+    ['v-text']?: unknown
+    ['v-model']?: unknown
   }
 }

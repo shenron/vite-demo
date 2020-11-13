@@ -11,18 +11,22 @@ export type Props = {
 export type HelloWorld = ReturnType<typeof useHelloWorld> & Props;
 
 export default defineComponent({
+  name: 'HelloWorld',
   props: {
     msg: {
       type: String,
-      required: true,
+      required: false,
     },
   },
   render(h: any) {
     return useRender.call(this, h, this as unknown as HelloWorld);
   },
-  setup(props) {
+  emits: {
+    custom: (str: string) => typeof str === 'string',
+  },
+  setup(props, context) {
     return {
-      ...useHelloWorld(props),
+      ...useHelloWorld(props, { emit: context.emit }),
     };
   },
 });

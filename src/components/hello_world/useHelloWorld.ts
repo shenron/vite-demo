@@ -1,8 +1,11 @@
-import { computed, ref } from 'vue';
+import { computed, ref, SetupContext } from 'vue';
 import type { Props } from './HelloWorld';
 
-export default function (props: Props) {
+export default function (props: Props, { emit }: SetupContext) {
+  const click = () => emit('custom', 'clicked');
+
   return {
+    click,
     count: ref<number>(0),
     newMsg: computed(() => `${props.msg} Hey`),
   };
