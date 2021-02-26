@@ -1,9 +1,18 @@
 import path from 'path';
-import { createJsxPlugin } from 'vite-jsx/plugin';
+import vueJsx from '@vitejs/plugin-vue-jsx';
+import vue from '@vitejs/plugin-vue';
 
-module.exports = {
-  alias: {
-    '/@/': path.resolve(__dirname, './src'),
+export default {
+  resolve: {
+    alias: [{
+      find: '@',
+      replacement: path.resolve(__dirname, 'src'),
+    }],
+    optimizeDeps: {
+      include: [
+        'javascript-time-ago/locale/en',
+      ],
+    },
   },
-  plugins: [createJsxPlugin()],
+  plugins: [vue(), vueJsx()],
 };

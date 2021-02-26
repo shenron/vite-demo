@@ -1,6 +1,6 @@
-import type { HelloWorld } from './HelloWorld';
+import type { HelloWorld, h } from './HelloWorld';
 
-export default function (h: any, props: HelloWorld) {
+export default function (props: HelloWorld) {
   return (
     <div>
       {props.msg} {props.newMsg}

@@ -5,7 +5,7 @@ import useHelloWorld from './useHelloWorld';
 import useRender from './useRender';
 
 export type Props = {
-  msg: string,
+  msg?: string,
 };
 
 export type HelloWorld = ReturnType<typeof useHelloWorld> & Props;
@@ -18,15 +18,15 @@ export default defineComponent({
       required: false,
     },
   },
-  render(h: any) {
-    return useRender.call(this, h, this as unknown as HelloWorld);
+  render() {
+    return useRender.call(this, this as unknown as HelloWorld);
   },
   emits: {
-    custom: (str: string) => typeof str === 'string',
+    custom: null,
   },
-  setup(props, context) {
+  setup(props, { emit }) {
     return {
-      ...useHelloWorld(props, { emit: context.emit }),
+      ...useHelloWorld(props, { emit }),
     };
   },
 });

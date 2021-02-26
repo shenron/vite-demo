@@ -17,7 +17,7 @@ module.exports = {
       typescript: {}, // this loads <rootdir>/tsconfig.json to eslint
       alias: {
         map: [
-          ['/@', path.resolve(__dirname, './src')],
+          ['@', path.resolve(__dirname, './src')],
         ],
         extensions,
       },
