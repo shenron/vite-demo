@@ -6,6 +6,7 @@ module.exports = {
   root: true,
   env: {
     browser: true,
+    node: true,
     es2020: true,
   },
   extends: [
@@ -47,7 +48,7 @@ module.exports = {
       tsx: 'never',
     }],
     'func-names': 0,
-    '@typescript-eslint/no-unused-vars': ['error', { argsIgnorePattern: '^(_|h)' }],
+    '@typescript-eslint/ban-ts-comment': 0,
     'no-unused-vars': ['error', { argsIgnorePattern: '^(_|h)' }],
     'import/prefer-default-export': 0,
     'import/no-absolute-path': 0,

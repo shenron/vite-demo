@@ -1,4 +1,4 @@
-import type { HelloWorld, h } from './HelloWorld';
+import type { HelloWorld } from './HelloWorld';
 
 export default function (props: HelloWorld) {
   return (

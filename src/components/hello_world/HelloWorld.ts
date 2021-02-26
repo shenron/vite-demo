@@ -22,7 +22,7 @@ export default defineComponent({
     return useRender.call(this, this as unknown as HelloWorld);
   },
   emits: {
-    custom: null,
+    custom: (args: unknown) => typeof args === 'string',
   },
   setup(props, { emit }) {
     return {

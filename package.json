@@ -4,18 +4,21 @@
   "scripts": {
     "build": "vite build",
     "dev": "vite",
-    "lint": "npm run lint:tsc && npm run lint:eslint",
+    "check-types": "tsc --noemit --skipLibCheck",
+    "lint:quiet": "eslint --quiet \"{tests,src}/**/*.{js,ts,tsx,vue}\" && npm run check-types",
+    "lint": "npm run check-types && npm run lint:eslint",
     "lint:eslint": "eslint --ext .jsx,.js,.ts,.tsx src/ --fix",
     "lint:tsc": "tsc --project tsconfig.json"
   },
   "dependencies": {
-    "vue": "^3.0.2"
+    "vue": "^3.0.2",
+    "@vitejs/plugin-vue": "^1.1.5",
+    "@vitejs/plugin-vue-jsx": "^1.1.2"
   },
   "devDependencies": {
+    "@types/node": "^14.14.31",
     "@typescript-eslint/eslint-plugin": "^4.15.2",
     "@typescript-eslint/parser": "^4.15.2",
-    "@vitejs/plugin-vue": "^1.1.5",
-    "@vitejs/plugin-vue-jsx": "^1.1.2",
     "@vue/compiler-sfc": "^3.0.6",
     "eslint": "^7.20.0",
     "eslint-config-airbnb-base": "^14.2.1",
