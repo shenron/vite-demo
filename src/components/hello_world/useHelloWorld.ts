@@ -1,13 +1,9 @@
 import { computed, ref, SetupContext } from 'vue';
 import type { Props } from './HelloWorld';
 
-type Context = {
-  emit: SetupContext['emit'],
-}
-
-export default function (props: Props, { emit }: Context) {
+export default function (props: Props, { emit }: SetupContext) {
   const click = () => {
-    emit('custom', 'clicked');
+    emit('custom', 'custom clicked');
   };
 
   return {

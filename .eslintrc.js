@@ -7,6 +7,7 @@ module.exports = {
   env: {
     browser: true,
     es2020: true,
+    node: true,
   },
   extends: [
     'airbnb-base',
@@ -47,8 +48,8 @@ module.exports = {
       tsx: 'never',
     }],
     'func-names': 0,
-    '@typescript-eslint/no-unused-vars': ['error', { argsIgnorePattern: '^(_|h)' }],
-    'no-unused-vars': ['error', { argsIgnorePattern: '^(_|h)' }],
+    '@typescript-eslint/no-unused-vars': ['error', { argsIgnorePattern: '^(_)' }],
+    'no-unused-vars': ['error', { argsIgnorePattern: '^(_)' }],
     'import/prefer-default-export': 0,
     'import/no-absolute-path': 0,
   },
