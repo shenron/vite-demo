@@ -7,11 +7,11 @@ type Context = SetupContext<{
 }>;
 
 export default function (props: Props, { emit }: Context) {
-  const click = () => emit('custom', 'a click');
+  const click = () => emit('custom', 'custom event value');
 
   return {
     click,
     count: ref<number>(0),
-    newMsg: computed(() => `${props.msg} Hey`),
+    newMsg: computed(() => `${props.msg} + Vite + TSX`),
   };
 }

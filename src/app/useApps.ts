@@ -1,7 +1,7 @@
 import { ref } from 'vue';
 
 export default function () {
-  const v = ref('Hello');
+  const v = ref('initial value');
 
   return {
     v,

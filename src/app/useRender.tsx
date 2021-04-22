@@ -15,7 +15,7 @@ export default function (context: App) {
 
     <div
       style="border: 1px solid blue; width: 200px; margin: auto; margin-bottom: 10px; padding: 10px;">
-      <HelloWorld msg="Hello Vue 3.0 + Vite"
+      <HelloWorld msg="Vue 3.0"
         onCustom={(str) => console.log(str)}
         vSlots={{
           default: () => 'slot render',
@@ -25,7 +25,7 @@ export default function (context: App) {
     <div
       style="border: 1px solid green; width: 200px; margin: auto; margin-bottom: 10px; padding: 10px;">
       <button onClick={withModifiers(() => {
-        console.log('clicked');
+        console.log('button clicked');
       }, ['stop'])}> Catch native event
       </button>
     </div>
