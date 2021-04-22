@@ -1,15 +1,19 @@
 import { defineComponent } from 'vue';
 import { Context } from '../../../types/context.d';
-import useHelloWorld from './useHelloWorld';
-import useRender from './useRender';
+import setup from './useHelloWorld';
+import render from './useRender';
 
 export type Props = {
   msg?: string,
 };
 
-export type HelloWorld = Context<ReturnType<typeof useHelloWorld>> & Props;
+export type HelloWorld = Context<ReturnType<typeof setup>> & Props;
 
-export default defineComponent({
+export interface HelloWorldEvents {
+  onCustom(s: string): void,
+}
+
+const HelloWorld = defineComponent({
   name: 'HelloWorld',
   props: {
     msg: {
@@ -18,7 +22,11 @@ export default defineComponent({
       required: false,
     },
   },
-  emits: ['custom'],
-  render: useRender,
-  setup: useHelloWorld,
+  emits: {
+    custom: (args: string) => typeof args === 'string',
+  },
+  render,
+  setup,
 });
+
+export default HelloWorld;

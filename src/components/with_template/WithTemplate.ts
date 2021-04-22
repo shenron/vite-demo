@@ -1,5 +1,4 @@
-import { defineComponent, ref } from 'vue';
-import Parent from '@/_base/Parent';
+import { defineComponent } from 'vue';
 
 export default defineComponent({
   props: {
@@ -7,14 +6,5 @@ export default defineComponent({
       type: String,
       required: true,
     },
-  },
-  setup() {
-    const dto = ref(new Parent({
-      childMsg: 'childMsg'
-    }));
-
-    return {
-      dto,
-    };
   },
 });

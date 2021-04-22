@@ -8,11 +8,6 @@ export default {
       find: '@',
       replacement: path.resolve(__dirname, 'src'),
     }],
-    optimizeDeps: {
-      include: [
-        'javascript-time-ago/locale/en',
-      ],
-    },
   },
   plugins: [vue(), vueJsx()],
 };
