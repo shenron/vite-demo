@@ -12,7 +12,7 @@ export default function (context: App) {
     <with-template msg="Oh yes" />
 
     <HelloWorld msg="Hello Vue 3.0 + Vite"
-      onCustom={(str: string) => console.log(str)}
+      onCustom={(str) => console.log(str)}
       vSlots={{
         default: () => 'Hello from slots',
       }} />
