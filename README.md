@@ -9,5 +9,5 @@ Component is split in two files:
 - `useApp.ts` business code
 - `useRender.tsx` render function
 
-It's possible to check component' `props` types, but a bit tricky to [check emit types](./src/components/hello_world/README.md).
+It's possible to check component' `props` types, but a bit tricky to [check emit types](./src/components/hello_world/).
 
