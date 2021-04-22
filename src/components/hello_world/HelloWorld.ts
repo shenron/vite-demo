@@ -1,5 +1,5 @@
 import { defineComponent } from 'vue';
-import { Context } from '../../../types/context.d';
+import { Context } from '@/types/context';
 import setup from './useHelloWorld';
 import render from './useRender';
 
