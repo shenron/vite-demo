@@ -1,7 +1,7 @@
 import { defineComponent } from 'vue';
 import WithTemplate from '@/components/with_template/WithTemplate.vue';
 import { Context } from '@/getContextValues';
-import setup from './useApps';
+import setup from './useApp';
 import render from './useRender';
 
 export type App = Context<ReturnType<typeof setup>>;
