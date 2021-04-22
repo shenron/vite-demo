@@ -1,4 +1,4 @@
-import { defineComponent } from 'vue';
+import { defineComponent, PropType } from 'vue';
 import { Context } from '@/types/context';
 import setup from './useHelloWorld';
 import render from './useRender';
@@ -9,9 +9,9 @@ export type Props = {
 
 export type HelloWorld = Context<ReturnType<typeof setup>> & Props;
 
-export interface HelloWorldEvents {
-  onCustom(s: string): void,
-}
+export type HelloWorldEvents = {
+  onCustom: (s: string) => void,
+};
 
 const HelloWorld = defineComponent({
   name: 'HelloWorld',
@@ -21,6 +21,10 @@ const HelloWorld = defineComponent({
       default: () => '',
       required: false,
     },
+    onCustom: Function as PropType<HelloWorldEvents['onCustom']>,
+    vSlots: Object as PropType<{
+      default: () => string,
+    }>,
   },
   emits: {
     custom: (args: string) => typeof args === 'string',

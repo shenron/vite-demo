@@ -54,5 +54,6 @@ module.exports = {
     // fix conflicts on "export default interface"
     semi: 'off',
     '@typescript-eslint/semi': ['error'],
+    '@typescript-eslint/no-empty-interface': 0,
   },
 };

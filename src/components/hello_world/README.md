@@ -4,6 +4,5 @@ The idea here is to show how declare a component with maximum check types.
 
 - with `HelloWorld` type is possible to use props / setup result in the render function
 - with `HelloWorldEvents` type is possible to use events in parent tsx component
+- HelloWord component has to define `vSlots` and `events` in props to fix tsc check
   
-  Events check are not fully supported, the interface has to be added in 
-  [ComponentsEvents.d.ts](/src/types/ComponentsEvents.d.ts)
