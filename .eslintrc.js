@@ -50,5 +50,9 @@ module.exports = {
     'func-names': 0,
     'import/prefer-default-export': 0,
     'import/no-absolute-path': 0,
+
+    // fix conflicts on "export default interface"
+    semi: 'off',
+    '@typescript-eslint/semi': ['error'],
   },
 };
