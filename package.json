@@ -4,11 +4,11 @@
   "scripts": {
     "build": "vite build",
     "dev": "vite",
+    "lint": "npm run lint:eslint && npm run lint:tsc",
+    "lint:tsc": "eslint --quiet \"{tests,src}/**/*.{js,ts,tsx,vue}\" && npm run check-types",
     "check-types": "tsc --noemit --skipLibCheck",
-    "lint:quiet": "eslint --quiet \"{tests,src}/**/*.{js,ts,tsx,vue}\" && npm run check-types",
-    "lint": "npm run check-types && npm run lint:eslint",
-    "lint:eslint": "eslint --ext .jsx,.js,.ts,.tsx src/ --fix",
-    "lint:tsc": "tsc --project tsconfig.json"
+    "lint:eslint": "eslint --ext .jsx,.js,.ts,.tsx src/",
+    "lint:fix": "eslint --ext .jsx,.js,.ts,.tsx src/ --fix"
   },
   "dependencies": {
     "vue": "^3.0.2",
