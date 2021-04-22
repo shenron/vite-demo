@@ -6,6 +6,9 @@ interface CustomProps {
   vSlots: { [id: string]: Func },
 }
 
-export default interface ComponentsEvents extends CustomProps, HelloWorldEvents {
+// will be imported by "vue-ts-shim.d.ts"
+export default interface ComponentsEvents extends
+  CustomProps,
+  HelloWorldEvents {
 
 }
