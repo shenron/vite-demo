@@ -7,22 +7,33 @@ export default function (context: App) {
   return <>
     <img alt="Vue logo" src={logo} />
 
-    { /* WithTemplate is a .vue single component,
-    mix on tsx default template make ts lint angry */ }
-    <with-template msg="Oh yes" />
+    <div style="border: 1px solid black; width: 200px; margin: auto; margin-bottom: 10px;">
+      { /* WithTemplate is a .vue single component,
+      mix on tsx default template make ts lint angry */}
+      <with-template msg="Prop message" />
+    </div>
 
-    <HelloWorld msg="Hello Vue 3.0 + Vite"
-      onCustom={(str) => console.log(str)}
-      vSlots={{
-        default: () => 'Hello from slots',
-      }} />
+    <div
+      style="border: 1px solid blue; width: 200px; margin: auto; margin-bottom: 10px; padding: 10px;">
+      <HelloWorld msg="Hello Vue 3.0 + Vite"
+        onCustom={(str) => console.log(str)}
+        vSlots={{
+          default: () => 'slot render',
+        }} />
+    </div>
 
-    <button onClick={withModifiers(() => {
-      console.log('clicked');
-    }, ['stop'])}>Click me
-    </button>
+    <div
+      style="border: 1px solid green; width: 200px; margin: auto; margin-bottom: 10px; padding: 10px;">
+      <button onClick={withModifiers(() => {
+        console.log('clicked');
+      }, ['stop'])}> Catch native event
+      </button>
+    </div>
 
-    <input type="text" v-model={context.v} /> {context.v}
+    <div
+      style="border: 1px solid pink; width: 200px; margin: auto; margin-bottom: 10px; padding: 10px;">
+      <input type="text" v-model={context.v} /> {context.v}
+    </div>
 
     <router-view />
 

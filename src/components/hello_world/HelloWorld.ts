@@ -13,7 +13,7 @@ export type HelloWorldEvents = {
   onCustom: (s: string) => void,
 };
 
-const HelloWorld = defineComponent({
+export default defineComponent({
   name: 'HelloWorld',
   props: {
     msg: {
@@ -21,16 +21,17 @@ const HelloWorld = defineComponent({
       default: () => '',
       required: false,
     },
+
+    // fix parent tsc lint
     onCustom: Function as PropType<HelloWorldEvents['onCustom']>,
     vSlots: Object as PropType<{
       default: () => string,
     }>,
   },
   emits: {
+    // display warning at runtime
     custom: (args: string) => typeof args === 'string',
   },
   render,
   setup,
 });
-
-export default HelloWorld;
