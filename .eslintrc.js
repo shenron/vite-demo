@@ -41,11 +41,17 @@ module.exports = {
     'no-param-reassign': 0,
     '@typescript-eslint/ban-ts-comment': 'off',
 
+    // fix export/import default
+    'import/no-named-as-default': 0,
+
     // fix tsx component
     'import/prefer-default-export': 0,
 
     // turn on errors for missing imports
     'import/no-unresolved': 'error',
+
+    // fix conflicts on "export default interface"
+    semi: 'off',
 
     // fix import with airbnb
     'import/extensions': ['error', 'ignorePackages', {

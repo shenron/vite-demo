@@ -1,9 +1,7 @@
+// @ts-nocheck
+// eslint-disable-next-line no-unused-vars
 type Func = ((this: any, ...args: any[]) => any | void);
 
-interface CustomProps {
+export default interface GlobalProps {
   vSlots?: { [id: string]: Func },
-}
-
-// will be imported by "vue-ts-shim.d.ts"
-export default interface GlobalProps extends CustomProps {
 }
