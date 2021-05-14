@@ -1,7 +1,7 @@
 import { withModifiers } from 'vue';
 import HelloWorld from '@/components/hello_world/HelloWorld';
 import logo from '@/assets/logo.png';
-import { App } from '@/app/App';
+import type { App } from '@/app/App';
 
 export default function (context: App) {
   return <>

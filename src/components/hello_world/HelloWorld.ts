@@ -10,6 +10,7 @@ export type Props = {
 export type HelloWorld = Context<ReturnType<typeof setup>> & Props;
 
 export type HelloWorldEvents = {
+  // eslint-disable-next-line no-unused-vars
   onCustom: (s: string) => void,
 };
 

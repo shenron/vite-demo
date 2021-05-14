@@ -1,59 +1,59 @@
-const path = require('path'); // eslint-disable-line @typescript-eslint/no-var-requires
-
-const extensions = ['.js', '.jsx', '.ts', '.tsx', '.scss', '.css'];
-
 module.exports = {
-  root: true,
   env: {
-    browser: true,
     node: true,
-    es2020: true,
+    browser: true,
+    es2021: true,
   },
   extends: [
+    'plugin:vue/vue3-essential',
+    '@vue/typescript/recommended',
     'airbnb-base',
-    'plugin:@typescript-eslint/recommended',
   ],
   settings: {
+    'import/parsers': {
+      '@typescript-eslint/parser': ['.ts', '.tsx', '.vue'],
+    },
     'import/resolver': {
-      typescript: {}, // this loads <rootdir>/tsconfig.json to eslint
-      alias: {
-        map: [
-          ['@', path.resolve(__dirname, './src')],
-        ],
-        extensions,
-      },
-      node: {
-        extensions,
+      typescript: {
+        project: '.',
       },
     },
   },
-  parser: 'vue-eslint-parser',
   parserOptions: {
+    ecmaVersion: 2021,
     parser: '@typescript-eslint/parser',
     sourceType: 'module',
-    ecmaVersion: 2020,
-    ecmaFeatures: {
-      jsx: true,
+    typescript: {
+      // use a glob pattern
+      project: './tsconfig.json',
     },
   },
   plugins: [
     'vue',
     '@typescript-eslint',
+    'import',
   ],
   rules: {
+    'no-console': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
+    'no-debugger': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
+    'no-underscore-dangle': 'off',
+    'func-names': 0,
+    'no-param-reassign': 0,
+    '@typescript-eslint/ban-ts-comment': 'off',
+
+    // fix tsx component
+    'import/prefer-default-export': 0,
+
+    // turn on errors for missing imports
+    'import/no-unresolved': 'error',
+
+    // fix import with airbnb
     'import/extensions': ['error', 'ignorePackages', {
       js: 'never',
+      mjs: 'never',
       jsx: 'never',
       ts: 'never',
       tsx: 'never',
     }],
-    'func-names': 0,
-    'import/prefer-default-export': 0,
-    'import/no-absolute-path': 0,
-
-    // fix conflicts on "export default interface"
-    semi: 'off',
-    '@typescript-eslint/semi': ['error'],
-    '@typescript-eslint/no-empty-interface': 0,
   },
 };
