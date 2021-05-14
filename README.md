@@ -14,3 +14,6 @@ It's possible to check component' `props` types, but a bit tricky to [check emit
 ## Events
 Events check are not fully supported, it's possible to register global events on [GlobalProps.d.ts](/src/types/GlobalProps.d.ts)
 
+## Unit tests
+Jest is used to run unit tests. For TSX compatibility babel has been installed.
+
