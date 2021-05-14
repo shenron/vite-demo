@@ -39,7 +39,10 @@ module.exports = {
     'no-underscore-dangle': 'off',
     'func-names': 0,
     'no-param-reassign': 0,
+
     '@typescript-eslint/ban-ts-comment': 'off',
+    '@typescript-eslint/no-explicit-any': 0,
+    '@typescript-eslint/explicit-module-boundary-types': 0,
 
     // fix export/import default
     'import/no-named-as-default': 0,

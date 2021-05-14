@@ -1,18 +1,7 @@
 import { defineComponent, PropType } from 'vue';
-import { Context } from '@/types/context';
+import type { HelloWorldEvents } from './HelloWorld.d'
 import setup from './useHelloWorld';
 import render from './useRender';
-
-export type Props = {
-  msg?: string,
-};
-
-export type HelloWorld = Context<ReturnType<typeof setup>> & Props;
-
-export type HelloWorldEvents = {
-  // eslint-disable-next-line no-unused-vars
-  onCustom: (s: string) => void,
-};
 
 export default defineComponent({
   name: 'HelloWorld',

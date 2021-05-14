@@ -1,5 +1,5 @@
 import { computed, ref, SetupContext } from 'vue';
-import type { HelloWorldEvents, Props } from './HelloWorld';
+import type { HelloWorldEvents, Props } from './HelloWorld.d';
 
 type Context = SetupContext<{
   // lint when call emit with 'custom'
