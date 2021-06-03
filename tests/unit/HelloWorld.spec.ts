@@ -1,5 +1,5 @@
 import { mount } from '@vue/test-utils';
-import HelloWorld from '../../src/components/hello_world/HelloWorld';
+import HelloWorld from '@/components/hello_world/HelloWorld';
 
 describe('HelloWorld', () => {
   it('should display header text', () => {

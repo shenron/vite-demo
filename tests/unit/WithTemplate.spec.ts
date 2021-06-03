@@ -1,5 +1,5 @@
 import { mount } from '@vue/test-utils';
-import WithTemplate from '../../src/components/with_template/WithTemplate.vue';
+import WithTemplate from '@/components/with_template/WithTemplate.vue';
 
 describe('HelloWorld', () => {
   it('should display header text', () => {

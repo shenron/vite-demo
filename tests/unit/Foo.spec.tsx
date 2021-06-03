@@ -1,5 +1,5 @@
 import { mount } from '@vue/test-utils';
-import { Foo } from '../../src/components/Foo';
+import { Foo } from '@/components/Foo';
 
 describe('HelloWorld', () => {
   it('should display header text', () => {
