@@ -1,5 +1,6 @@
 import 'vue';
 
+// eslint-disable-next-line import/no-unresolved,import/extensions
 import GlobalComponentsEvents from '@/types/GlobalProps';
 
 declare module 'vue' {

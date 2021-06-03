@@ -1,5 +1,5 @@
 import { defineComponent, PropType } from 'vue';
-import type { HelloWorldEvents } from './HelloWorld.d'
+import type { HelloWorldEvents } from './HelloWorld.d';
 import setup from './useHelloWorld';
 import render from './useRender';
 

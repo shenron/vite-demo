@@ -1,4 +1,4 @@
-import { Context } from '@/types/context';
+import { Context } from '@/types/context.d';
 import type setup from './useHelloWorld';
 
 export type Props = {
