@@ -13,14 +13,14 @@ export default defineComponent({
     },
 
     // fix parent tsc lint
-    onCustom: Function as PropType<HelloWorldEvents['onCustom']>,
+    onCustomClick: Function as PropType<HelloWorldEvents['onCustomClick']>,
     vSlots: Object as PropType<{
       default: () => string,
     }>,
   },
   emits: {
     // display warning at runtime
-    custom: (args: string) => typeof args === 'string',
+    'custom-click': (args: string) => typeof args === 'string',
   },
   render,
   setup,

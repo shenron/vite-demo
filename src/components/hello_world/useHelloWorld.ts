@@ -3,11 +3,11 @@ import type { HelloWorldEvents, Props } from './HelloWorld.d';
 
 type Context = SetupContext<{
   // lint when call emit with 'custom'
-  custom: HelloWorldEvents['onCustom']
+  'custom-click': HelloWorldEvents['onCustomClick']
 }>;
 
 export default function (props: Props, { emit }: Context) {
-  const click = () => emit('custom', 'custom event value');
+  const click = () => emit('custom-click', 'custom event value');
 
   return {
     click,
