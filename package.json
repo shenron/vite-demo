@@ -3,8 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "build": "vite build",
-    "dev": "vite",
+    "build": "vite build --mode=production",
+    "dev": "vite --mode=development",
     "lint": "npm run lint:eslint && npm run lint:tsc",
     "lint:tsc": "eslint --quiet \"{tests,src}/**/*.{js,ts,tsx,vue}\" && npm run check-types",
     "check-types": "tsc --noemit --skipLibCheck",
