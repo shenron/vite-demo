@@ -12,12 +12,6 @@
     "lint:fix": "eslint --ext .jsx,.js,.ts,.tsx,.vue src/ --fix",
     "test": "vue-cli-service test:unit"
   },
-  "lint-staged": {
-    "*.{js,jsx,vue,ts,tsx}": [
-      "vue-cli-service lint",
-      "git add"
-    ]
-  },
   "dependencies": {
     "@vitejs/plugin-vue": "^1.2.3",
     "@vitejs/plugin-vue-jsx": "^1.1.5",
