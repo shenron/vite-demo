@@ -16,13 +16,14 @@ module.exports = {
     'no-debugger': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
     'no-underscore-dangle': 'off',
     'func-names': 0,
-
-    // fix export/import default
     'import/no-named-as-default': 0,
 
+    // fix export/import default
     '@typescript-eslint/ban-ts-comment': 'off',
+
     '@typescript-eslint/no-explicit-any': 0,
     '@typescript-eslint/explicit-module-boundary-types': 0,
+    '@typescript-eslint/no-empty-function': 0,
 
     // fix tsx component
     'import/prefer-default-export': 0,

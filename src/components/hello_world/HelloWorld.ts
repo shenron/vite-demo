@@ -1,7 +1,21 @@
-import { defineComponent, PropType } from 'vue';
-import type { HelloWorldEvents } from './HelloWorld.d';
+import { defineComponent, PropType, VNode } from 'vue';
+import type { Context } from '@/definitions/getContextValues';
 import setup from './useHelloWorld';
 import render from './useRender';
+
+export type HelloWorldEvents = {
+  onCustomClick: (s: string) => void,
+};
+
+export type Props = {
+  vSlots?: Partial<{
+    default: () => null | string | VNode | VNode[],
+  }>,
+  onCustomClick: HelloWorldEvents['onCustomClick'],
+  msg?: string,
+};
+
+export type HelloWorld = Context<ReturnType<typeof setup>, Props>;
 
 export default defineComponent({
   name: 'HelloWorld',
@@ -13,10 +27,12 @@ export default defineComponent({
     },
 
     // fix parent tsc lint
-    onCustomClick: Function as PropType<HelloWorldEvents['onCustomClick']>,
-    vSlots: Object as PropType<{
-      default: () => string,
-    }>,
+    onCustomClick: {
+      type: Function as PropType<HelloWorldEvents['onCustomClick']>,
+      default: () => {},
+    },
+
+    vSlots: Object as PropType<Props['vSlots']>,
   },
   emits: {
     // display warning at runtime

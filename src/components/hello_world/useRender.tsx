@@ -1,5 +1,5 @@
 import { VNode } from 'vue';
-import type { HelloWorld } from './HelloWorld.d';
+import type { HelloWorld } from './HelloWorld';
 
 export default function (cmp: HelloWorld): VNode {
   return <>
@@ -9,7 +9,7 @@ export default function (cmp: HelloWorld): VNode {
     </div>
 
     <div style="margin-top: 3px;">
-      {cmp.$slots?.default?.({})}
+      {cmp.$slots?.default?.()}
     </div>
   </>;
 }

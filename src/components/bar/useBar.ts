@@ -1,7 +1,7 @@
-import type { Bar } from './Bar.d';
+import type { Props } from './Bar';
 
-export default function (context: Bar) {
-  console.log(context.msg);
+export default function (c: Props) {
+  console.log(c.msg);
 
   return {};
 }
