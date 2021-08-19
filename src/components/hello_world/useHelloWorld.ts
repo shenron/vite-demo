@@ -13,16 +13,14 @@ type Context = SetupContext<{
 }>;
 
 export default function (props: Props, { emit }: Context) {
-  const click = () => emit('custom-click', 'custom event value');
+  const worker = new MyWorker();
+  const obj = wrap<WObj>(worker);
 
-  const init = async () => {
-    const worker = new MyWorker();
-    const obj = wrap<WObj>(worker);
-    console.log(`Counter: ${await obj.counter}`);
+  // ask a webworker to do an addition :)
+  const click = async () => {
     await obj.inc();
-    console.log(`Counter: ${await obj.counter}`);
+    emit('custom-click', `custom event value: ${await obj.counter}`);
   };
-  init();
 
   return {
     click,
