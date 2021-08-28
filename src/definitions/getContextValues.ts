@@ -7,6 +7,12 @@ type Slots = Partial<{
   [id: string]: (...args: unknown[]) => unknown,
 }>
 
+type RemoveReadonly<T> = {
+  -readonly [P in keyof T]: T[P];
+};
+
+export type Emits <T extends ReadonlyArray<any>> = RemoveReadonly<T>;
+
 export type Context<T, Z extends {
   vSlots?: Slots
 } | unknown = Partial<{ vSlots?: Slots }>> = SetupContext & {

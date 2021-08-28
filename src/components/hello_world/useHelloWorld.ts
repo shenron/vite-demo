@@ -1,10 +1,10 @@
 import { computed, ref, SetupContext } from 'vue';
+import { wrap } from 'comlink';
 
 // @ts-ignore - worker import
 import MyWorker from '@/utils.worker?worker';
-import type { WObj } from '@/utils.worker';
 
-import { wrap } from 'comlink';
+import type { WObj } from '@/utils.worker';
 import type { Props } from './HelloWorld';
 
 type Context = SetupContext<{
