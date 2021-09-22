@@ -2,7 +2,7 @@
   <p>Hello {{ msg }}</p>
   <Foo>
     <template #>Call Foo</template>
-</Foo>
+  </Foo>
 </template>
 
 <script lang="ts" src="./WithTemplate.ts"></script>
