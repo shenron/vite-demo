@@ -2,4 +2,4 @@
   [<slot />]
 </template>
 
-<script src="./Foo.ts"></script>
+<script lang="ts" src="./Foo.ts"></script>
