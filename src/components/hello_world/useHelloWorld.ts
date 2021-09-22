@@ -1,10 +1,7 @@
 import { computed, ref, SetupContext } from 'vue';
-import type { Props } from './HelloWorld';
+import type { HelloWorldEvents, Props } from './HelloWorld';
 
-type Context = SetupContext<{
-  // lint when call emit with 'custom'
-  'custom-click': Props['onCustomClick']
-}>;
+type Context = SetupContext<HelloWorldEvents>;
 
 export default function (props: Props, { emit }: Context) {
   const click = () => emit('custom-click', 'custom event value');

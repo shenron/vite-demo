@@ -4,14 +4,14 @@ import setup from './useHelloWorld';
 import render from './useRender';
 
 export type HelloWorldEvents = {
-  onCustomClick: (s: string) => void,
+  'custom-click': (s: string) => void,
 };
 
 export type Props = {
   vSlots?: Partial<{
     default: () => null | string | VNode | VNode[],
   }>,
-  onCustomClick: HelloWorldEvents['onCustomClick'],
+  onCustomClick?: HelloWorldEvents['custom-click'],
   msg?: string,
 };
 
@@ -28,8 +28,8 @@ export default defineComponent({
 
     // fix parent tsc lint
     onCustomClick: {
-      type: Function as PropType<HelloWorldEvents['onCustomClick']>,
-      default: () => {},
+      type: Function as PropType<Props['onCustomClick']>,
+      default: null,
     },
 
     vSlots: Object as PropType<Props['vSlots']>,
