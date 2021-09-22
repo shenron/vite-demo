@@ -8,7 +8,7 @@ export default function (props: Props, { emit }: Context) {
 
   return {
     click,
-    count: ref<number>(0),
+    count: ref(0),
     newMsg: computed(() => `${props.msg} + Vite + TSX`),
   };
 }
