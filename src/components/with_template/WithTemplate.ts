@@ -1,5 +1,5 @@
 import { defineComponent } from 'vue';
-import Foo from '../foo/Foo.vue';
+import Foo from '../foo/FooBar.vue';
 
 export default defineComponent({
   components: {

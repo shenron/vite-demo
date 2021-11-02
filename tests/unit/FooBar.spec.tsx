@@ -1,9 +1,9 @@
 import { mount } from '@vue/test-utils';
-import { Foo } from '@/components/Foo';
+import { FooBar } from '@/components/FooBar';
 
 describe('HelloWorld', () => {
   it('should display header text', () => {
-    const wrapper = mount(Foo);
+    const wrapper = mount(FooBar);
 
     expect(wrapper.text()).toEqual('from JSX');
   });
