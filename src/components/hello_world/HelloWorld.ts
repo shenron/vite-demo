@@ -11,7 +11,6 @@ export type Props = {
   vSlots?: Partial<{
     default: () => null | string | VNode | VNode[],
   }>,
-  onCustomClick?: HelloWorldEvents['custom-click'],
   msg?: string,
 };
 
@@ -24,12 +23,6 @@ export default defineComponent({
       type: String,
       default: () => '',
       required: false,
-    },
-
-    // fix parent tsc lint
-    onCustomClick: {
-      type: Function as PropType<Props['onCustomClick']>,
-      default: null,
     },
 
     vSlots: Object as PropType<Props['vSlots']>,

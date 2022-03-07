@@ -17,7 +17,7 @@ export default function (context: App) {
     <div
       style="border: 1px solid blue; width: 200px; margin: auto; margin-bottom: 10px; padding: 10px;">
       <HelloWorld msg="Vue 3.0"
-        onCustomClick={(str) => console.log(str)}
+        onCustom-click={console.log}
         vSlots={{
           default: () => 'slot render',
         }} />
