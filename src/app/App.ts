@@ -4,8 +4,7 @@ import WithTemplate from '@/components/with_template/WithTemplate.vue';
 import setup from './useApp';
 import render from './useRender';
 
-export type Props = {
-};
+export type Props = unknown;
 
 export type App = Context<ReturnType<typeof setup>, Props>;
 
