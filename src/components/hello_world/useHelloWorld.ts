@@ -1,4 +1,4 @@
-import { computed, ref, SetupContext } from 'vue';
+import { computed, SetupContext } from 'vue';
 import type { HelloWorldEvents, Props } from './HelloWorld';
 
 type Context = SetupContext<HelloWorldEvents>;
@@ -8,7 +8,6 @@ export default function (props: Props, { emit }: Context) {
 
   return {
     click,
-    count: ref(0),
     newMsg: computed(() => `${props.msg} + Vite + TSX`),
   };
 }
