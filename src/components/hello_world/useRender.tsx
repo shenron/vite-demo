@@ -1,9 +1,9 @@
-import { VNode } from 'vue';
 import type { HelloWorld } from './HelloWorld';
 
-export default function (cmp: HelloWorld): VNode {
+export default function (cmp: HelloWorld) {
   return <>
     <p>{cmp.newMsg}</p>
+
     <div style="cursor: pointer; background-color: black; color: white;" onClick={cmp.click}>
       Emit Custom Event
     </div>

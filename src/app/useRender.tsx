@@ -33,12 +33,12 @@ export default function (context: App) {
 
     <div
       style="border: 1px solid pink; width: 200px; margin: auto; margin-bottom: 10px; padding: 10px;">
-      <BaseInput vModel={context.v} /> {context.v}
+      <BaseInput v-model={context.v} /> {context.v}
     </div>
 
     <router-view />
 
-    <router-link to={{ name: 'test' }} v-slots={{
+    <router-link to={{ name: 'test' }} vSlots={{
       default: ({ navigate, href }: { navigate: any, href: string }) => (
         <a href={href} onClick={navigate}>A Router Link</a>
       ),
