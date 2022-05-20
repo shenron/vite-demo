@@ -1,5 +1,7 @@
 # Issue with Vue 3.2.34
 
+https://github.com/vuejs/core/issues/5967
+
 > npm run lint:tsc
 
 ```
