@@ -1,25 +1,13 @@
-# VueJS 3 project with:
-- Vite2
-- TS(x)
-- Eslint
+# Issue with Vue 3.2.34
 
+> npm run lint:tsc
 
-## App
-Component is split in two files:
-- `useApp.ts` business code
-- `useRender.tsx` render function
+```
+src/main.tsx:12:13 - error TS2322: Type '{ class: string; }' is not assignable to type 'IntrinsicAttributes & Partial<{}> & Omit<Readonly<ExtractPropTypes<{}>>, never>'.
+  Property 'class' does not exist on type 'IntrinsicAttributes & Partial<{}> & Omit<Readonly<ExtractPropTypes<{}>>, never>'.
 
-## TSX Check
-- [event/slots](./src/components/hello_world/)
-- [vModel](./src/components/base_input/)
-- register global events on [GlobalProps.d.ts](/src/types/GlobalProps.d.ts)
+12   <MyButton class="a-super-class" />
 
-## .vue check 
-With [vue-tsc](https://github.com/johnsoncodehk/vue-tsc) it's possible to checked vue files:
-```bash
-./node_modules/.bin/vue-tsc --noEmit
 ```
 
-## Unit tests
-Jest is used to run unit tests. For TSX compatibility babel has been installed.
-
+'AllowedComponentProps' is ignored.
