@@ -1,8 +1,6 @@
 <template>
   <p>Hello {{ msg }}</p>
-  <Foo>
-    <template #>Call Foo</template>
-  </Foo>
+  <Foo>Call Foo</Foo>
 </template>
 
 <script lang="ts" src="./WithTemplate.ts"></script>
