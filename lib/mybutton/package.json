@@ -2,7 +2,7 @@
   "name": "mybutton",
   "version": "1.0.0",
   "description": "",
-  "main": "MyButton.js",
+  "main": "MyButton.min.js",
   "types": "MyButton.d.ts",
   "author": "",
   "license": "ISC"
