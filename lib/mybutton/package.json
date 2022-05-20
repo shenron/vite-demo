@@ -1,0 +1,9 @@
+{
+  "name": "mybutton",
+  "version": "1.0.0",
+  "description": "",
+  "main": "MyButton.js",
+  "types": "MyButton.d.ts",
+  "author": "",
+  "license": "ISC"
+}
