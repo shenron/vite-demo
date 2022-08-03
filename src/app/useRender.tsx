@@ -2,6 +2,7 @@ import { withModifiers } from 'vue';
 import HelloWorld from '@/components/hello_world/HelloWorld';
 import BaseInput from '@/components/base_input/BaseInput';
 import logo from '@/assets/logo.png';
+import DisplayMsgOnce from '@/components/DisplayMsgOnce';
 import type { App } from './App';
 
 export default function (context: App) {
@@ -35,7 +36,7 @@ export default function (context: App) {
 
     <div
       style="border: 1px solid pink; width: 200px; margin: auto; margin-bottom: 10px; padding: 10px;">
-      <BaseInput v-model={context.v} /> {context.v}
+      <BaseInput v-model={context.v} /> <DisplayMsgOnce msg={context.v} />
     </div>
 
     <router-view />
