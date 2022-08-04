@@ -12,6 +12,7 @@ Component is split in two files:
 ## TSX Check
 - [event/slots](./src/components/hello_world/)
 - [vModel](./src/components/base_input/)
+- [useMemo/withMemo](./src/components/DisplayMsgOnce.tsx)
 - register global events on [GlobalProps.d.ts](/src/types/GlobalProps.d.ts)
 
 ## .vue check 
