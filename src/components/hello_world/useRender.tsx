@@ -5,7 +5,7 @@ export default function (cmp: HelloWorld) {
     <div>
       <p>{cmp.newMsg}</p>
 
-      <div style="cursor: pointer; background-color: black; color: white;" onClick={cmp.click}>
+      <div style="cursor: pointer; background-color: black; color: white;" onClick={cmp.onClick}>
         Emit Custom Event
       </div>
 

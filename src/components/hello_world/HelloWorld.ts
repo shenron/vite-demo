@@ -4,7 +4,7 @@ import setup from './useHelloWorld';
 import render from './useRender';
 
 const emits = {
-  'custom-click': (args: string) => typeof args === 'string',
+  click: (args: string) => typeof args === 'string',
 } as const;
 
 const props = {

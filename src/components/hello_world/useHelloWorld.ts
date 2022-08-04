@@ -2,10 +2,12 @@ import { computed, SetupContext } from 'vue';
 import type { Events, Props } from './HelloWorld';
 
 export default function (props: Props, { emit }: SetupContext<Events>) {
-  const click = () => emit('custom-click', 'custom event value');
+  const onClick = () => emit('click', 'custom event value');
+
+  const newMsg = computed(() => `${props.msg} + Vite + TSX`);
 
   return {
-    click,
-    newMsg: computed(() => `${props.msg} + Vite + TSX`),
+    onClick,
+    newMsg,
   };
 }
