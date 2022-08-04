@@ -32,8 +32,8 @@ export default defineComponent({
 
     return (
       <ul>
-        <li>{msgOnce}</li>
-        <li>{msg}</li>
+        <li><small>v-once:</small> {msgOnce}</li>
+        <li><small>v-memo:</small> {msg}</li>
       </ul>
     );
   },
