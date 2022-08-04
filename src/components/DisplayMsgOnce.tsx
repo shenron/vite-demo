@@ -11,9 +11,13 @@ type Props = ExtractPropTypes<typeof props>;
 const setup = (p: Props) => {
   const memo = useMemo();
 
+  const msgMemo = memo(() => [p.msg]);
+
+  const msgOnceMemo = memo();
+
   return {
-    msgOnceMemo: memo([]),
-    msgMemo: memo([p.msg]),
+    msgMemo,
+    msgOnceMemo,
   };
 };
 
@@ -26,14 +30,10 @@ export default defineComponent({
   render(c: DisplayMsgOnce) {
     const { msgMemo, msgOnceMemo } = c;
 
-    const msgOnce = msgOnceMemo(() => <span>{c.msg}</span>);
-
-    const msg = msgMemo(() => <span>{c.msg}</span>);
-
     return (
       <ul>
-        <li><small>v-once:</small> {msgOnce}</li>
-        <li><small>v-memo:</small> {msg}</li>
+        <li><small>v-once:</small> {msgOnceMemo(<span>{c.msg}</span>)}</li>
+        <li><small>v-memo:</small> {msgMemo(<span>{c.msg}</span>)}</li>
       </ul>
     );
   },
