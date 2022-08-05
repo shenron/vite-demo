@@ -1,16 +1,15 @@
+import CustomButton from '../CustomButton';
 import type { HelloWorld } from './HelloWorld';
 
-export default function (cmp: HelloWorld) {
+export default function (c: HelloWorld) {
   return (
     <div>
-      <p>{cmp.newMsg}</p>
+      <p>{c.newMsg}</p>
 
-      <div style="cursor: pointer; background-color: black; color: white;" onClick={cmp.onClick}>
-        Emit Custom Event
-      </div>
+      <CustomButton onCustomClick={c.onCustomClick} />
 
       <div style="margin-top: 3px;">
-        {cmp.$slots?.default?.()}
+        {c.$slots?.default?.()}
       </div>
     </div>
   );

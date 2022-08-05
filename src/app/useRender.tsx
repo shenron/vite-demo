@@ -20,7 +20,7 @@ export default function (context: App) {
       <HelloWorld
         class="a-class-name"
         msg="Vue 3.0"
-        onClick={console.log}
+        onCustomClick={console.log}
         vSlots={{
           default: () => 'slot render',
         }} />
