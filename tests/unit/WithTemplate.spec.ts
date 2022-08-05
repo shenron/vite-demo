@@ -1,15 +1,16 @@
 import { shallowMount } from '@vue/test-utils';
+import { expect, test } from 'vitest';
 import WithTemplateCmp from '@/components/with_template/WithTemplate.vue';
-import WithTemplate from '@/components/with_template/WithTemplate';
 
-describe('HelloWorld', () => {
-  it('should display header text', () => {
-    const wrapper = shallowMount(WithTemplateCmp as typeof WithTemplate, {
-      props: {
-        msg: 'Vue 3.0',
-      },
-    });
+test('mount WithTemplate component', () => {
+  expect(WithTemplateCmp).toBeTruthy();
 
-    expect(wrapper.find('p').text()).toEqual('Hello Vue 3.0');
+  // @ts-ignore - TODO how to fix this ts error?
+  const wrapper = shallowMount(WithTemplateCmp, {
+    props: {
+      msg: 'Vue 3.0',
+    },
   });
+
+  expect(wrapper.find('p').text()).toEqual('Hello (Vue 3.0)  from .vue template');
 });

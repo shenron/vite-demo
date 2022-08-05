@@ -1,10 +1,9 @@
+import { expect, test } from 'vitest';
 import { mount } from '@vue/test-utils';
 import { FooBar } from '@/components/FooBar';
 
-describe('HelloWorld', () => {
-  it('should display header text', () => {
-    const wrapper = mount(FooBar);
+test('HelloWorld', () => {
+  const wrapper = mount(FooBar);
 
-    expect(wrapper.text()).toEqual('from JSX');
-  });
+  expect(wrapper.text()).toEqual('from JSX');
 });
