@@ -8,6 +8,13 @@ export default defineConfig({
     vue(),
     vueJsx(),
   ],
+  test: {
+    globals: true,
+    environment: 'jsdom',
+    transformMode: {
+      web: [/.[tj]sx$/],
+    },
+  },
   resolve: {
     alias: {
       '@': path.resolve(__dirname, '/src'),
