@@ -26,7 +26,6 @@
     "@typescript-eslint/parser": "^5.33.0",
     "@vue/cli-plugin-eslint": "^5.0.8",
     "@vue/cli-plugin-typescript": "^5.0.8",
-    "@vue/cli-service": "^5.0.8",
     "@vue/compiler-sfc": "^3.2.37",
     "@vue/eslint-config-airbnb": "^6.0.0",
     "@vue/eslint-config-typescript": "^11.0.0",
