@@ -5,7 +5,7 @@ import setup from './useBaseInput';
 
 const emits = ['update:modelValue'] as const;
 
-export type Events = Emits<typeof emits>
+export type Events = Emits<typeof emits>;
 
 const props = {
   // v-model declared as Props is to be able to use `v-model` on tsx with check
@@ -15,7 +15,7 @@ const props = {
 
 export type Props = ExternalProps<typeof props>;
 
-export type BaseInput = Context<typeof setup, Props>
+export type BaseInput = Context<typeof setup, Props>;
 
 export default defineComponent({
   inheritAttrs: false,

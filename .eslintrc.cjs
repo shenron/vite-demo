@@ -5,8 +5,7 @@ module.exports = {
   },
   extends: [
     'plugin:vue/vue3-essential',
-    '@vue/airbnb',
-    '@vue/typescript/recommended',
+    '@vue/eslint-config-airbnb-with-typescript',
   ],
   parserOptions: {
     ecmaVersion: 2020,
@@ -15,28 +14,8 @@ module.exports = {
     'no-console': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
     'no-debugger': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
     'no-underscore-dangle': 'off',
-    'func-names': 0,
     'import/no-named-as-default': 0,
-
-    // fix export/import default
-    '@typescript-eslint/ban-ts-comment': 'off',
-
-    '@typescript-eslint/no-explicit-any': 0,
-    '@typescript-eslint/explicit-module-boundary-types': 0,
-    '@typescript-eslint/no-empty-function': 0,
-
-    // fix tsx component
+    'react/jsx-props-no-spreading': 0,
     'import/prefer-default-export': 0,
   },
-  overrides: [
-    {
-      files: [
-        '**/__tests__/*.{j,t}s?(x)',
-        '**/tests/unit/**/*.spec.{j,t}s?(x)',
-      ],
-      env: {
-        jest: true,
-      },
-    },
-  ],
 };

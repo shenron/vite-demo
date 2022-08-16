@@ -3,12 +3,12 @@ import type {
 } from 'vue';
 import type { SetOptional } from 'type-fest';
 
-type Unwrap<T> = T extends Ref<infer U> ? U : T
+type Unwrap<T> = T extends Ref<infer U> ? U : T;
 
 type Slots = Partial<{
   default: (...args: unknown[]) => unknown,
   [id: string]: (...args: unknown[]) => unknown,
-}>
+}>;
 
 type RemoveReadonly<T> = {
   -readonly [P in keyof T]: T[P];
@@ -18,7 +18,7 @@ type EmitsAsObj<T extends {
   [id: string]: any
 }> = {
   [K in Extract<keyof T, string>]: (...args: Parameters<T[K]>) => unknown
-}
+};
 
 type EmitsAsArr<T extends ReadonlyArray<any>> = RemoveReadonly<T>;
 
@@ -39,4 +39,4 @@ export type Context<T extends (...args: any[]) => any, Z extends {
 
 export type ExternalProps<T extends Record<string | number | symbol, object>>
   // @ts-ignore
-  = SetOptional<ExtractPropTypes<T>, keyof ExtractDefaultPropTypes<T>>
+  = SetOptional<ExtractPropTypes<T>, keyof ExtractDefaultPropTypes<T>>;

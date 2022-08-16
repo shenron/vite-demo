@@ -21,7 +21,7 @@ const setup = (p: Props) => {
   };
 };
 
-type DisplayMsgOnce = Context<typeof setup, Props>
+type DisplayMsgOnce = Context<typeof setup, Props>;
 
 export default defineComponent({
   name: 'DisplayMsgOnce',
@@ -32,8 +32,16 @@ export default defineComponent({
 
     return (
       <ul>
-        <li><small>v-once:</small> {msgOnceMemo(<span>{c.msg}</span>)}</li>
-        <li><small>v-memo:</small> {msgMemo(<span>{c.msg}</span>)}</li>
+        <li>
+          <small>v-once:</small>
+          {' '}
+          {msgOnceMemo(<span>{c.msg}</span>)}
+        </li>
+        <li>
+          <small>v-memo:</small>
+          {' '}
+          {msgMemo(<span>{c.msg}</span>)}
+        </li>
       </ul>
     );
   },

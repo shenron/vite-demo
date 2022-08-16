@@ -1,7 +1,7 @@
 <template>
   <p>Hello ({{ msg }}) <br /> from .vue template</p>
   <Foo>Call Foo</Foo>
-  <CustomButton @custom-click="onCustomClick"/>
+  <CustomButton @custom-click="onCustomClick" />
 </template>
 
 <script lang="ts" setup>

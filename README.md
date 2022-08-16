@@ -1,5 +1,5 @@
 # VueJS 3 project with:
-- Vite2
+- Vite3
 - TS(x)
 - Eslint
 
