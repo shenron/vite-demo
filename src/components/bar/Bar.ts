@@ -1,5 +1,5 @@
 import { defineComponent } from 'vue';
-import { Context, ExternalProps } from '@/definitions/getContextValues';
+import type { Context, ExternalProps } from '@/definitions/getContextValues';
 import render from './useRender';
 import setup from './useBar';
 

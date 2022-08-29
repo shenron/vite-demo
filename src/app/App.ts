@@ -1,5 +1,5 @@
 import { defineComponent } from 'vue';
-import { Context } from '@/definitions/getContextValues';
+import type { Context } from '@/definitions/getContextValues';
 import WithTemplate from '@/components/with_template/WithTemplate.vue';
 import setup from './useApp';
 import render from './useRender';
