@@ -10,5 +10,6 @@ const props = {
 export type Props = ExternalProps<typeof props>;
 
 export default defineComponent({
+  name: 'FooBar',
   props,
 });
