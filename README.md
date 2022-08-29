@@ -22,5 +22,5 @@ With [vue-tsc](https://github.com/johnsoncodehk/vue-tsc) it's possible to checke
 ```
 
 ## Unit tests
-Jest is used to run unit tests. For TSX compatibility babel has been installed.
+Vitest is used
 
