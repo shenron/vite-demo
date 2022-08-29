@@ -3,24 +3,25 @@ import type { Context, Emits, ExternalProps } from '@/definitions/getContextValu
 import render from './useRender';
 import setup from './useBaseInput';
 
-const emits = ['update:modelValue'] as const;
+const emits = {
+  'update:modelValue': (v: string) => v !== undefined,
+} as const;
 
 export type Events = Emits<typeof emits>;
 
 const props = {
-  // v-model declared as Props is to be able to use `v-model` on tsx with check
-  'v-model': String,
   modelValue: String,
-};
+} as const;
 
 export type Props = ExternalProps<typeof props>;
 
 export type BaseInput = Context<typeof setup, Props>;
 
 export default defineComponent({
+  name: 'BaseInput',
   inheritAttrs: false,
   props,
-  emits: emits as Events,
+  emits,
   render,
   setup,
 });
