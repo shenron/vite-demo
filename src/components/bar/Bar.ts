@@ -15,6 +15,7 @@ export type Props = ExternalProps<typeof props>;
 export type Bar = Context<typeof setup, Props>;
 
 export default defineComponent({
+  name: 'BarBar',
   props,
   render,
   setup,
