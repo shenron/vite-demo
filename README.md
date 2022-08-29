@@ -2,7 +2,7 @@
 - Vite3
 - TS(x)
 - Eslint
-
+- Vitest
 
 ## App
 Component is split in two files:
@@ -12,7 +12,6 @@ Component is split in two files:
 ## TSX Check
 - [event/slots](./src/components/hello_world/)
 - [vModel](./src/components/base_input/)
-- [useMemo/withMemo](./src/components/DisplayMsgOnce.tsx)
 - register global events on [GlobalProps.d.ts](/src/types/GlobalProps.d.ts)
 
 ## .vue check 
@@ -20,6 +19,9 @@ With [vue-tsc](https://github.com/johnsoncodehk/vue-tsc) it's possible to checke
 ```bash
 ./node_modules/.bin/vue-tsc --noEmit
 ```
+
+## React's useMemo alternative
+- [useMemo/withMemo](./src/components/DisplayMsgOnce.tsx)
 
 ## Unit tests
 Vitest is used
