@@ -5,7 +5,7 @@ export default function useMemo() {
 
   let i = -1;
 
-  return (memo: () => any[] = () => []) => {
+  return (memo: () => unknown[] = () => []) => {
     i += 1;
 
     const render = (index: number, toRender: VNode<any, any>) => {
