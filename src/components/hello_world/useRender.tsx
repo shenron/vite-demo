@@ -4,7 +4,7 @@ import type { HelloWorld } from './HelloWorld';
 export default function useRender(c: HelloWorld) {
   return (
     <div>
-      <p>{c.newMsg}</p>
+      <p v-text={c.newMsg} />
 
       <CustomButton onCustomClick={c.onCustomClick} />
 

@@ -5,13 +5,13 @@ import setup from './useHelloWorld';
 import render from './useRender';
 
 const props = {
-  vSlots: Object as PropType<Partial<{
-    default: () => null | string | VNode | VNode[],
-  }>>,
   msg: {
     type: String,
     default: () => '',
   },
+  vSlots: Object as PropType<Partial<{
+    default: () => null | string | VNode | VNode[],
+  }>>,
 } as const;
 
 export type Props = ExternalProps<typeof props>;
