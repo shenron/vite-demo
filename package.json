@@ -17,7 +17,6 @@
   "dependencies": {
     "@vitejs/plugin-vue": "^4.0.0",
     "@vitejs/plugin-vue-jsx": "^3.0.0",
-    "type-fest": "^3.5.7",
     "vite": "^4.1.1",
     "vue": "^3.2.47",
     "vue-router": "^4.1.6"

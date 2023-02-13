@@ -1,7 +1,9 @@
 import type {
-  ExtractDefaultPropTypes, ExtractPropTypes, Ref, SetupContext,
+  ExtractDefaultPropTypes,
+  ExtractPropTypes,
+  Ref,
+  SetupContext,
 } from 'vue';
-import type { SetOptional } from 'type-fest';
 
 type Unwrap<T> = T extends Ref<infer U> ? U : T;
 
@@ -37,6 +39,8 @@ export type Context<T extends (...args: any[]) => any, Z extends {
   $emit: SetupContext['emit'],
 } & Omit<Z, 'vSlots'>;
 
+type PartiallyOptional<T, K extends keyof T> = Omit<T, K> & Partial<Pick<T, K>>;
+
 export type ExternalProps<T extends Record<string | number | symbol, object>>
   // @ts-ignore
-  = SetOptional<ExtractPropTypes<T>, keyof ExtractDefaultPropTypes<T>>;
+  = PartiallyOptional<ExtractPropTypes<T>, keyof ExtractDefaultPropTypes<T>>;
