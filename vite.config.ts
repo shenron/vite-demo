@@ -9,6 +9,7 @@ export default defineConfig({
     vueJsx(),
   ],
   test: {
+    include: ['./tests/unit/**/*.spec.ts'],
     globals: true,
     environment: 'jsdom',
     transformMode: {
