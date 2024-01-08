@@ -12,9 +12,6 @@ export default defineConfig({
     include: ['./tests/unit/**/*.spec.ts'],
     globals: true,
     environment: 'jsdom',
-    transformMode: {
-      web: [/.[tj]sx$/],
-    },
   },
   resolve: {
     alias: {
