@@ -1,4 +1,4 @@
-import { Ref, Slots } from 'vue';
+import type { Ref, Slots } from 'vue';
 
 type Unwrap<T> = T extends Ref<infer U> ? U : T;
 

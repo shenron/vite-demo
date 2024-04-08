@@ -25,6 +25,6 @@ export default defineComponent({
   inheritAttrs: false,
   props,
   emits,
-  render,
   setup,
+  render,
 });

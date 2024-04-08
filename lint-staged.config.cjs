@@ -1,6 +1,6 @@
 module.exports = {
   '*.{js,jsx,vue}': [
-    'eslint --cache --ext .jsx,.js,.vue',
+    'eslint --cache',
   ],
   '*.{ts,tsx}': [
     () => 'tsc --skipLibCheck --noEmit',

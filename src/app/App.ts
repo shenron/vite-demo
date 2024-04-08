@@ -11,6 +11,6 @@ export default defineComponent({
   components: {
     WithTemplate,
   },
-  render,
   setup,
+  render,
 });

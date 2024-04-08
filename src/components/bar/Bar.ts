@@ -17,6 +17,6 @@ export type Bar = Context<typeof setup, Props>;
 export default defineComponent({
   name: 'BarBar',
   props,
-  render,
   setup,
+  render,
 });
