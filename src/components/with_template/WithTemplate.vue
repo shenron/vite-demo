@@ -1,5 +1,5 @@
 <template>
-  <p>Hello ({{ msg }}) <br /> from .vue template</p>
+  <p>Hello ({{ msg }}) <br> from .vue template</p>
   <Foo>Call Foo</Foo>
   <CustomButton @custom-click="onCustomClick" />
 </template>
