@@ -1,27 +1,38 @@
 import { withModifiers } from 'vue';
+import { RouterLink, RouterView } from 'vue-router';
 import HelloWorld from '@/components/hello_world/HelloWorld';
 import BaseInput from '@/components/base_input/BaseInput';
 import logo from '@/assets/logo.png';
 import DisplayMsgOnce from '@/components/DisplayMsgOnce';
 import type { App } from './App';
 
-export default function useRender(context: App) {
+const boxStyle = {
+  width: '200px',
+  margin: 'auto',
+  padding: '10px',
+  marginBottom: '10px',
+}
+
+export default function useRender(c: App) {
   return (
     <>
       <img alt="Vue logo" src={logo} />
 
-      <div style={{
-        border: '1px solid black', width: '200px', margin: 'auto', 'margin-bottom': '10px',
-      }}
+      <div
+        style={{
+          ...boxStyle,
+          border: '1px solid black',
+        }}
       >
-        { /* WithTemplate is a .vue single component,
-      mix on tsx default template make ts lint angry */}
+        { /* TS not happy to mix SFC and TSX components*/}
         <with-template msg="Prop message" />
       </div>
 
-      <div style={{
-        border: '1px solid blue', width: '200px', margin: 'auto', 'margin-bottom': '10px', padding: '10px',
-      }}
+      <div
+        style={{
+          ...boxStyle,
+          border: '1px solid blue',
+        }}
       >
         <HelloWorld
           class="a-class-name"
@@ -33,9 +44,11 @@ export default function useRender(context: App) {
         />
       </div>
 
-      <div style={{
-        border: '1px solid green', width: '200px', margin: 'auto', 'margin-bottom': '10px', padding: '10px',
-      }}
+      <div
+        style={{
+          ...boxStyle,
+          border: '1px solid green',
+        }}
       >
         <button
           type="button"
@@ -50,21 +63,26 @@ export default function useRender(context: App) {
 
       <div
         style={{
-          border: '1px solid pink', width: '200px', margin: 'auto', 'margin-bottom': '10px', padding: '10px',
+          ...boxStyle,
+          border: '1px solid pink',
         }}
       >
-        <BaseInput v-model={context.v} />
+        <BaseInput v-model={c.v} />
         {' '}
-        <DisplayMsgOnce msg={context.v} />
+        <DisplayMsgOnce msg={c.v} />
       </div>
 
-      <router-view />
+      <RouterView />
 
-      <router-link
+      <RouterLink
         to={{ name: 'test' }}
         vSlots={{
-          default: ({ navigate, href }: { navigate: any, href: string }) => (
-            <a href={href} onClick={navigate}>A Router Link</a>
+          default: ({ navigate, href }) => (
+            <a
+              href={href}
+              onClick={navigate}
+              v-text="A Router Link"
+            />
           ),
         }}
       />
