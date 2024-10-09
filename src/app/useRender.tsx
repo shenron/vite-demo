@@ -11,7 +11,7 @@ const boxStyle = {
   margin: 'auto',
   padding: '10px',
   marginBottom: '10px',
-}
+};
 
 export default function useRender(c: App) {
   return (
@@ -24,7 +24,7 @@ export default function useRender(c: App) {
           border: '1px solid black',
         }}
       >
-        { /* TS not happy to mix SFC and TSX components*/}
+        { /* TS not happy to mix SFC and TSX components */}
         <with-template msg="Prop message" />
       </div>
 

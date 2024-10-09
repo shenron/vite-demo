@@ -8,7 +8,9 @@ declare module 'vue-router' {
   export declare interface RouterLinkProps extends $RouterLinkProps {
     onClick?: (e: Event) => unknown;
     vSlots?: Partial<{
-      default: ({ route, href, isActive, isExactActive, navigate }: UnwrapRef<UseLinkReturn>) => SlotNode;
+      default: ({
+        route, href, isActive, isExactActive, navigate,
+      }: UnwrapRef<UseLinkReturn>) => SlotNode;
     }>
   }
 }

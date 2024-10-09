@@ -1,4 +1,4 @@
-import 'vue';
+import type { GlobalComponentsEvents } from 'vue';
 
 declare module 'vue' {
   // should be removed after Vue supported component events typing
