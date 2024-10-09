@@ -7,7 +7,6 @@ import { FlatCompat } from '@eslint/eslintrc';
 import path from 'path';
 import globals from 'globals';
 
-// mimic CommonJS variables -- not needed if using CommonJS
 const __dirname = path.dirname(import.meta.url);
 
 const compat = new FlatCompat({
