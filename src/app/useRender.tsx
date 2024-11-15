@@ -5,6 +5,7 @@ import BaseInput from '@/components/base_input/BaseInput';
 import logo from '@/assets/logo.png';
 import DisplayMsgOnce from '@/components/DisplayMsgOnce';
 import type { App } from './App';
+import BaseLink from '@/components/BaseLink';
 
 const boxStyle = {
   width: '200px',
@@ -74,18 +75,24 @@ export default function useRender(c: App) {
 
       <RouterView />
 
-      <RouterLink
-        to={{ name: 'test' }}
-        vSlots={{
-          default: ({ navigate, href }) => (
-            <a
-              href={href}
-              onClick={navigate}
-              v-text="A Router Link"
-            />
-          ),
-        }}
-      />
+      <p>
+        <BaseLink v-text="Base link" />
+
+        <br />
+
+        <RouterLink
+          to={{ name: 'test' }}
+          vSlots={{
+            default: ({ navigate, href }) => (
+              <a
+                href={href}
+                onClick={navigate}
+                v-text="A Router Link"
+              />
+            ),
+          }}
+        />
+      </p>
     </>
   );
 }
