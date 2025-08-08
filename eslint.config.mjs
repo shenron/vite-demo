@@ -1,41 +1,15 @@
-import eslint from '@eslint/js';
-import js from '@eslint/js';
-import eslintPluginVue from 'eslint-plugin-vue';
-import globals from 'globals';
-import typescriptEslint from 'typescript-eslint';
 import path from 'node:path';
 import parser from '@typescript-eslint/parser';
 import { includeIgnoreFile } from '@eslint/compat';
+import js from '@eslint/js';
 import { configs, plugins, rules } from 'eslint-config-airbnb-extended';
 import pluginNode from 'eslint-plugin-n';
 import typescriptEslintPlugin from '@typescript-eslint/eslint-plugin';
+import vueEslintParser from 'vue-eslint-parser';
+import stylisticPlugin from '@stylistic/eslint-plugin';
+import globals from 'globals';
 
 const gitignorePath = path.resolve('.', '.gitignore');
-
-const vueJsConfig = typescriptEslint.config(
-  { ignores: ['*.d.ts', '**/coverage', '**/dist'] },
-  {
-    extends: [
-      eslint.configs.recommended,
-      ...typescriptEslint.configs.recommended,
-      ...eslintPluginVue.configs['flat/recommended'],
-    ],
-    files: ['**/*.{vue}'],
-    languageOptions: {
-      ecmaVersion: 'latest',
-      sourceType: 'module',
-      globals: globals.browser,
-      parserOptions: {
-        parser: typescriptEslint.parser,
-      },
-    },
-    rules: {
-      '@typescript-eslint/no-empty-object-type': 'off',
-      '@typescript-eslint/ban-ts-comment': 'off',
-      '@typescript-eslint/no-explicit-any': 'off',
-    },
-  },
-);
 
 const jsConfig = [
   // ESLint Recommended Rules
@@ -58,6 +32,32 @@ const tsxConfig = [
   {
     rules: {
       'react/react-in-jsx-scope': 'off'
+    },
+  },
+];
+
+const vueJsConfig = [
+  {
+    files: ['**/*.vue'],
+    languageOptions: {
+      parser: vueEslintParser,
+      parserOptions: {
+        parser,
+        project: './tsconfig.json',
+        tsconfigRootDir: path.resolve('.'),
+        extraFileExtensions: ['.vue'],
+        ecmaVersion: 'latest',
+        sourceType: 'module',
+      },
+      globals: globals.browser,
+    },
+    plugins: {
+      '@typescript-eslint': typescriptEslintPlugin,
+      '@stylistic': stylisticPlugin,
+    },
+    rules: {
+      'no-console': 'error',
+      ...rules.typescript.typescriptEslintStrict.rules,
     },
   },
 ];
@@ -108,19 +108,6 @@ const tsConfig = [
           },
         },
       ],
-      'import-x/extensions': [
-        'error',
-        'ignorePackages',
-        {
-          ts: 'never',
-          tsx: 'never',
-          js: 'never',
-          jsx: 'never',
-          vue: 'never',
-        },
-      ],
-      'import-x/no-unresolved': 'error',
-      '@typescript-eslint/consistent-type-imports': 'off',
       '@typescript-eslint/no-misused-spread': 'off',
       '@typescript-eslint/prefer-for-of': 'off',
       '@typescript-eslint/no-shadow': 'off',
@@ -133,8 +120,8 @@ const tsConfig = [
       '@typescript-eslint/ban-ts-comment': 'off',
       '@typescript-eslint/prefer-nullish-coalescing': 'off',
       '@stylistic/max-len': [2, 150, 4],
-      'import-x/prefer-default-export': 'off',
       'import-x/no-named-as-default': 'off',
+      'import-x/prefer-default-export': 'off',
       'import-x/namespace': 'off',
       'no-underscore-dangle': 'off',
       'no-param-reassign': ['error', { props: true, ignorePropertyModificationsFor: ['input'] }],
@@ -149,6 +136,7 @@ const tsConfig = [
     },
     rules: {
       '@typescript-eslint/no-shadow': 'off',
+      '@typescript-eslint/no-empty-object-type': 'off',
     },
   },
 
@@ -190,10 +178,14 @@ const tsConfig = [
 ];
 
 export default [
+  // Ignore .gitignore files/folder in eslint
   includeIgnoreFile(gitignorePath),
+  // Javascript Config
   ...jsConfig,
+  // nodejs config
   ...nodeConfig,
+  // TypeScript Config
   ...tsxConfig,
   ...tsConfig,
-  ...vueJsConfig,
+   ...vueJsConfig,
 ];

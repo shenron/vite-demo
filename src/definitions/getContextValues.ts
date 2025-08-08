@@ -28,7 +28,8 @@ export type Emits<T extends (ReadonlyArray<any> | object)> = T extends ReadonlyA
 
 export type Context<T extends (...args: any[]) => any, Z extends {
   vSlots?: Slots;
-} = Partial<{ vSlots?: Slots }>> = SetupContext & {
+// eslint-disable-next-line @typescript-eslint/no-redundant-type-constituents
+} | unknown = Partial<{ vSlots?: Slots }>> = SetupContext & {
   [P in keyof ReturnType<T>]: Unwrap<ReturnType<T>[P]>
 } & {
   listeners: Record<string, (args?: any) => any>;

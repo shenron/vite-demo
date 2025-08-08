@@ -1,6 +1,6 @@
 import { createApp } from 'vue';
-import loadEnv from './loadEnv';
 import App from './app/App';
+import loadEnv from './loadEnv';
 import router from './router';
 import './index.css';
 
