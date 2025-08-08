@@ -1,4 +1,4 @@
-import { VNode } from 'vue';
+import type { VNode } from 'vue';
 import type { Bar } from './Bar';
 
 export default function useRender(context: Bar): VNode {

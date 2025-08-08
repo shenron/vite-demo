@@ -1,7 +1,7 @@
-type Func = ((this: any, ...args: any[]) => any | void);
+type Func = ((this: any, ...args: any[]) => any);
 
 interface GlobalProps {
-  vSlots?: { [id: string]: Func },
+  vSlots?: Record<string, Func>;
 }
 
 export default GlobalProps;

@@ -1,31 +1,13 @@
 {
   "compilerOptions": {
-    "experimentalDecorators": true,
-    "jsx": "preserve",
-    "jsxImportSource": "vue",
-    "jsxFactory": "h",
-    "jsxFragmentFactory": "Fragment",
     "target": "ESNext",
-    "skipLibCheck": true,
-    "module": "ESNext",
-    "sourceMap": true,
-    "outDir": "./dist",
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
     "strict": true,
-    "noUnusedLocals": true,
-    "noImplicitReturns": true,
-    "moduleResolution": "node",
+    "jsx": "preserve",
     "esModuleInterop": true,
-    "baseUrl": ".",
-    "paths": {
-      "@/*": [
-        "src/*"
-      ]
-    }
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true
   },
-  "exclude": [
-    "dist",
-    "node_modules",
-    "src/router/routes.ts"
-  ],
-  "types": ["vitest/globals"]
+  "include": ["*.ts"]
 }

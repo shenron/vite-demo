@@ -11,6 +11,6 @@ declare module 'vue-router' {
       default: ({
         route, href, isActive, isExactActive, navigate,
       }: UnwrapRef<UseLinkReturn>) => SlotNode;
-    }>
+    }>;
   }
 }

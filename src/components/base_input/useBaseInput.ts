@@ -1,4 +1,4 @@
-import { SetupContext } from 'vue';
+import type { SetupContext } from 'vue';
 import type { Props, Events } from './BaseInput';
 
 export default function useBaseInput(props: Props, { emit }: SetupContext<Events>) {

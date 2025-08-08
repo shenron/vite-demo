@@ -1,6 +1,7 @@
-import { defineComponent, ExtractPropTypes } from 'vue';
+import type { ExtractPropTypes } from 'vue';
+import { defineComponent } from 'vue';
 import useMemo from '@/compositions/useMemo';
-import { Context } from '@/definitions/getContextValues';
+import type { Context } from '@/definitions/getContextValues';
 
 const props = {
   msg: String,

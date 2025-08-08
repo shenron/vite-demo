@@ -1,9 +1,10 @@
-import { defineComponent, PropType, VNode } from 'vue';
-import { ExternalProps } from '@/definitions/getContextValues';
+import type { PropType, VNode } from 'vue';
+import { defineComponent } from 'vue';
+import type { ExternalProps } from '@/definitions/getContextValues';
 
 const props = {
   vSlots: Object as PropType<Partial<{
-    default: () => undefined | null | VNode
+    default: () => undefined | null | VNode;
   }>>,
 } as const;
 

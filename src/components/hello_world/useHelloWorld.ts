@@ -1,4 +1,5 @@
-import { computed, SetupContext } from 'vue';
+import type { SetupContext } from 'vue';
+import { computed } from 'vue';
 import type { Props, Events } from './HelloWorld';
 
 export default function useHelloWorld(props: Props, { emit }: SetupContext<Events>) {

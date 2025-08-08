@@ -1,4 +1,5 @@
-import { defineComponent, SetupContext, withModifiers } from 'vue';
+import type { SetupContext } from 'vue';
+import { defineComponent, withModifiers } from 'vue';
 import type { Emits } from '@/definitions/getContextValues';
 
 const preventDefault = withModifiers(() => {}, ['stop', 'prevent']);

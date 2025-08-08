@@ -1,4 +1,5 @@
-import { VNode, withMemo } from 'vue';
+import type { VNode } from 'vue';
+import { withMemo } from 'vue';
 
 export default function useMemo() {
   const cache: unknown[] = [];

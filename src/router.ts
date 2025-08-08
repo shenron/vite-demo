@@ -7,9 +7,11 @@ component.displayName = 'TestCmp';
 
 export default createRouter({
   history: createWebHistory(),
-  routes: [{
-    path: '/test',
-    name: 'test',
-    component,
-  }],
+  routes: [
+    {
+      path: '/test',
+      name: 'test',
+      component,
+    },
+  ],
 });
